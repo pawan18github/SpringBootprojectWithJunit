@@ -1,0 +1,17 @@
+
+CREATE TABLE Courses (
+    course_id int NOT NULL AUTO_INCREMENT,
+    course_name varchar(200) NOT NULL,
+    description varchar(1000),
+    PRIMARY KEY (course_id)
+);
+
+CREATE TABLE Books (
+    book_id int NOT NULL AUTO_INCREMENT,
+    book_name  varchar(200) NOT NULL,
+    author varchar(1000) ,
+    cost float,
+    course_id int ,
+    PRIMARY KEY (book_id),
+    FOREIGN KEY (course_id) REFERENCES Courses(course_id)
+);
